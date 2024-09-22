@@ -9,5 +9,5 @@ For fun, I tried out using local inference and embeddings using Ollama to take i
 ![image](https://github.com/user-attachments/assets/07d51bc5-4c6e-492d-a685-7b8e1c1c31c7)
 
 The RAG portion is lifted from this awesome video by https://www.youtube.com/@pixegami
-https://www.youtube.com/watch?v=2TJxpyO3ei4
-https://github.com/pixegami/rag-tutorial-v2
+- https://www.youtube.com/watch?v=2TJxpyO3ei4
+- https://github.com/pixegami/rag-tutorial-v2
