@@ -1,6 +1,6 @@
 # PetTestCharlie
 
-![image](https://github.com/user-attachments/assets/aacfe5a1-37ab-4380-bc12-52e560c926a8)
+![charlie](https://github.com/user-attachments/assets/3a4d92b9-0311-463d-be9c-afebfd2b0b8d)
 
 This is an app I made to track my dog's glucose levels.
 
