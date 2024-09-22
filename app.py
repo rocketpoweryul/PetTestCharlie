@@ -7,6 +7,7 @@ import json
 import os
 from ollama import chat 
 import markdown
+from RAGit import query_rag
 
 app = Flask(__name__)
 
@@ -77,6 +78,9 @@ def generate_summary(glucose_data, user_config):
     min_level = user_config['min_level']
     max_level = user_config['max_level']
 
+    insulin_context = query_rag(f"Give me information about {insulin_type} its impact on glucose levels in dogs.")
+    food_context = query_rag(f"Give me information about {food_type} and its impact on glucose levels in dogs.")
+
     prompt = f"""
     Dog Details:
     Name of dog: {name}
@@ -87,6 +91,8 @@ def generate_summary(glucose_data, user_config):
     - interpretation of mean ({mean_trough}) and median ({median_trough}) levels of troughs, focusing on the trend
     - interpretation of mean ({mean_peak}) and median ({median_peak}) levels of peaks, focusing on the trend
     - Given the dosages of insulin ({insulin_type}: {first_dose_amount} units AM, {second_dose_amount} units PM), and the glucose levels given the min ({min_level}) and max ({max_level}) safe levels, what can you summarize about the dog's condition?
+    - Given {insulin_context}
+    - Given {food_context}
 
     Glucose Time History (latest 50 records):
     {time_history_str}
