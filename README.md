@@ -1,5 +1,7 @@
 # PetTestCharlie
 
+![image](https://github.com/user-attachments/assets/aacfe5a1-37ab-4380-bc12-52e560c926a8)
+
 This is an app I made to track my dog's glucose levels.
 
 For fun, I tried out using local inference and embeddings using Ollama to take into context my dog's data, as well as use RAG to look at data on the type of insulin and food he uses.
