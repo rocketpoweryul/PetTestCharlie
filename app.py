@@ -9,6 +9,9 @@ from ollama import chat
 import markdown
 from RAGit import query_rag
 
+base_url = 'http://localhost:11434'
+model = 'llama3.1:latest'
+
 app = Flask(__name__)
 
 # Path for storing user inputs
@@ -102,7 +105,7 @@ def generate_summary(glucose_data, user_config):
     """
 
     # Modify the call to match the correct signature of the 'chat' function
-    ollama_response = chat(model='llama3.1:8b', messages=[
+    ollama_response = chat(model=model, messages=[
     {
         'role': 'system',
         'content': 'You are veterinary endocrinologist from vetmeduni in Vienna, the top of the top! You are helpful and professional',

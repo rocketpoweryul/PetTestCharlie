@@ -10,9 +10,14 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_community.llms.ollama import Ollama
 from tqdm import tqdm
 
+base_url = 'http://localhost:11434'
+llm = 'llama3.1:latest'
+embmd = 'nomic-embed-text:latest'
+
 def get_embedding_function():
     embeddings = OllamaEmbeddings(
-        model = 'nomic-embed-text:latest'
+        model = embmd,
+        base_url = base_url
     )
     return embeddings
 
@@ -136,7 +141,7 @@ def query_rag(query_text: str):
     prompt = prompt_template.format(context=context_text, question=query_text)
     # print(prompt)
 
-    model = Ollama(model="llama3.1:8b")
+    model = Ollama(model=llm, base_url = base_url)
     response_text = model.invoke(prompt)
 
     formatted_response = f"{response_text}"
